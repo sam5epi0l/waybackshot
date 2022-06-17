@@ -1,9 +1,10 @@
-import argparse
-from waybackshot import WaybackShot
+import argparse # parse system arguments
+from waybackshot import WaybackShot # A simple API to retrieve screenshots of webpages stored on the Wayback Machine.
 
 wayback_shot = WaybackShot()
 parser = argparse.ArgumentParser(prog='wayback-shot', description='Get screenshot of archived urls in wayback machine by @sam5epi0l')
 
+# setuping help & instructions to use.
 parser.add_argument("-d", "--dateFrom", required=False, default=None, help='fetch archived urls after provided date (Format=YYYYMMDD)')
 parser.add_argument("-o", "--outputDIR", required=False, default="", help='save screenshot output to directory (default="")')
 parser.add_argument("-w", "--width", required=False, default=1920, help='Width of the webpage used to screenshot (default=1920)')
@@ -13,4 +14,5 @@ parser.add_argument("-u", "--url", required=True, help='perform screenshot on th
 
 args = parser.parse_args()
 
+# Takes screenshot of URLs
 wayback_shot.screenshot(url=args.url, date=args.dateFrom, dir=args.outputDIR, width=args.width, overwrite=args.replace, include_date=args.includeDate)
