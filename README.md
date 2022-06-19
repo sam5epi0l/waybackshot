@@ -11,11 +11,18 @@ python3 shot.py -h
 ```
 
 # Example 🔻
-```
-waybackshot -u https://example.com/
-waybackshot -u urls.txt
-cat scope.txt | gau | waybackshot -u
-```
+  `waybackshot -u https://example.com/`
+
+  `while read line; do python3 shot.py -u "${line[@]}"; done < waybackurls.txt `
+
+## upcoming features
+* Syntax:
+  
+  `waybackshot -u urls.txt`
+
+  `cat scope.txt | gau | waybackshot -u`
+
+* every archive of the page with first or last option
 
 # Uses 🚀
 ```
